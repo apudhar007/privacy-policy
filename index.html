@@ -1,173 +1,713 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Privacy Policy – Hishab Potro</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy & Terms of Service — Hishab Potro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #1A56A0;
+      --blue-light: #2E73C8;
+      --blue-pale: #EBF3FB;
+      --blue-border: #C5DCEF;
+      --dark: #111827;
+      --body: #374151;
+      --muted: #6B7280;
+      --line: #E5E7EB;
+      --bg: #F9FAFB;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--body);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* ── TOP BANNER ── */
+    .banner {
+      background: var(--blue);
+      color: white;
+      text-align: center;
+      padding: 48px 24px 40px;
+    }
+    .banner-app {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 100px;
+      padding: 6px 18px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .banner-app span { font-size: 16px; }
+    .banner h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(28px, 5vw, 46px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .banner p {
+      font-size: 15px;
+      opacity: 0.8;
+      max-width: 480px;
+      margin: 0 auto 20px;
+    }
+    .banner-meta {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      opacity: 0.7;
+    }
+    .banner-meta span::before { content: "• "; }
+
+    /* ── LAYOUT ── */
+    .layout {
+      display: flex;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    /* ── SIDEBAR / TOC ── */
+    .toc {
+      width: 240px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 24px;
+    }
+    .toc-title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+    .toc a {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 5px 10px;
+      border-left: 2px solid transparent;
+      transition: all 0.15s;
+      line-height: 1.4;
+    }
+    .toc a:hover, .toc a.active {
+      color: var(--blue);
+      border-left-color: var(--blue);
+      background: var(--blue-pale);
+    }
+    .toc-section {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-top: 20px;
+      margin-bottom: 6px;
+      padding-left: 10px;
+    }
+
+    /* ── CONTENT ── */
+    .content { flex: 1; min-width: 0; }
+
+    .doc-block {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 40px 48px;
+      margin-bottom: 32px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .doc-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 2px solid var(--blue-pale);
+    }
+    .doc-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--blue);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .doc-header-text h2 {
+      font-family: 'Lora', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+    .doc-header-text p {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* Section headings */
+    .section {
+      margin-top: 36px;
+      scroll-margin-top: 32px;
+    }
+    .section:first-of-type { margin-top: 0; }
+
+    h3.s-title {
+      font-family: 'Lora', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--blue-border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    h3.s-title .num {
+      background: var(--blue);
+      color: white;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    h4.sub-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark);
+      margin: 18px 0 8px;
+    }
+
+    p.para {
+      font-size: 15px;
+      color: var(--body);
+      margin-bottom: 12px;
+      line-height: 1.8;
+    }
+
+    ul.list {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 12px;
+    }
+    ul.list li {
+      font-size: 15px;
+      color: var(--body);
+      padding: 5px 0 5px 22px;
+      position: relative;
+      line-height: 1.7;
+    }
+    ul.list li::before {
+      content: "›";
+      position: absolute;
+      left: 4px;
+      color: var(--blue-light);
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Permission table */
+    .perm-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 12px 0;
+    }
+    .perm-card {
+      background: var(--blue-pale);
+      border: 1px solid var(--blue-border);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .perm-card strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 3px;
+      font-family: 'DM Sans', monospace;
+    }
+    .perm-card span {
+      font-size: 13px;
+      color: var(--body);
+      line-height: 1.5;
+    }
+
+    /* Highlight box */
+    .highlight-box {
+      background: var(--blue-pale);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 14px;
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    /* Contact box */
+    .contact-box {
+      background: var(--dark);
+      color: white;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-top: 16px;
+    }
+    .contact-box p {
+      font-size: 14px;
+      opacity: 0.7;
+      margin-bottom: 12px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 0;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .contact-item .icon { font-size: 18px; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--muted);
+      background: var(--white);
+    }
+    footer .tagline {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      color: var(--blue);
+      margin-top: 6px;
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .toc { display: none; }
+      .doc-block { padding: 24px 20px; }
+      .perm-grid { grid-template-columns: 1fr; }
+      .layout { padding: 24px 16px; }
+    }
+  </style>
 </head>
 <body>
 
-<h1>Privacy Policy for Hishab Potro</h1>
+<!-- BANNER -->
+<div class="banner">
+  <div class="banner-app"><span>📒</span> Hishab Potro App</div>
+  <h1>Privacy Policy &amp;<br>Terms of Service</h1>
+  <p>Your trust matters. Here's exactly how we handle your data.</p>
+  <div class="banner-meta">
+    <span>Effective: June 1, 2025</span>
+    <span>Last Updated: June 1, 2025</span>
+    <span>Version 1.0</span>
+  </div>
+</div>
 
-<p><strong>Effective Date:</strong> 19 January 2026</p>
+<!-- MAIN LAYOUT -->
+<div class="layout">
 
-<p>
-Your privacy is important to us. This Privacy Policy explains how Hishab Potro
-("we", "us", or "our") collects, uses, and protects your information when you use
-our mobile application.
-</p>
+  <!-- SIDEBAR TOC -->
+  <nav class="toc">
+    <div class="toc-title">Contents</div>
+    <div class="toc-section">Privacy Policy</div>
+    <a href="#pp-intro">1. Introduction</a>
+    <a href="#pp-collect">2. Information We Collect</a>
+    <a href="#pp-use">3. How We Use Your Info</a>
+    <a href="#pp-storage">4. Data Storage &amp; Security</a>
+    <a href="#pp-sharing">5. Data Sharing</a>
+    <a href="#pp-permissions">6. App Permissions</a>
+    <a href="#pp-children">7. Children's Privacy</a>
+    <a href="#pp-rights">8. Your Rights</a>
+    <a href="#pp-suspension">9. Account Suspension</a>
+    <a href="#pp-thirdparty">10. Third-Party Services</a>
+    <a href="#pp-retention">11. Data Retention</a>
+    <a href="#pp-changes">12. Policy Changes</a>
+    <a href="#pp-contact">13. Contact Us</a>
+    <div class="toc-section">Terms of Service</div>
+    <a href="#tos-accept">1. Acceptance</a>
+    <a href="#tos-license">2. License</a>
+    <a href="#tos-resp">3. Responsibilities</a>
+    <a href="#tos-ip">4. Intellectual Property</a>
+    <a href="#tos-warranty">5. Disclaimer</a>
+    <a href="#tos-liability">6. Liability</a>
+    <a href="#tos-termination">7. Termination</a>
+    <a href="#tos-updates">8. Updates</a>
+    <a href="#tos-law">9. Governing Law</a>
+    <a href="#tos-contact">10. Contact</a>
+  </nav>
 
-<p>
-By using the Hishab Potro app, you agree to the collection and use of information
-in accordance with this policy.
-</p>
+  <!-- CONTENT -->
+  <main class="content">
 
-<h2>1. Information We Collect</h2>
+    <!-- ════════════════════════ PRIVACY POLICY ════════════════════════ -->
+    <div class="doc-block">
+      <div class="doc-header">
+        <div class="doc-icon">🔒</div>
+        <div class="doc-header-text">
+          <h2>Privacy Policy</h2>
+          <p>How Hishab Potro collects, uses, and protects your data</p>
+        </div>
+      </div>
 
-<p>We collect the following types of information to provide and improve our service:</p>
+      <!-- 1 -->
+      <div class="section" id="pp-intro">
+        <h3 class="s-title"><span class="num">1</span> Introduction</h3>
+        <p class="para">Welcome to <strong>Hishab Potro</strong> ("the App"), a digital ledger application designed to help small business owners and shopkeepers manage their financial records digitally. This Privacy Policy explains how we collect, use, store, and protect your information when you use our App.</p>
+        <p class="para">By downloading, installing, or using Hishab Potro, you agree to the terms of this Privacy Policy. If you do not agree, please discontinue use of the App immediately.</p>
+        <p class="para">This policy applies to all users of the Hishab Potro mobile application, available on Android devices.</p>
+      </div>
 
-<h3>Information You Provide Directly</h3>
-<ul>
-  <li>
-    <strong>Customer Information:</strong> When you add a customer, we collect and
-    store the customer's name and, optionally, their phone number. This information
-    is stored locally on your device.
-  </li>
-  <li>
-    <strong>Transaction Information:</strong> We collect and store financial
-    transaction details that you manually enter, including amounts, descriptions,
-    dates, and due dates. This data is stored locally on your device.
-  </li>
-  <li>
-    <strong>Shop Name:</strong> We store the shop or business name you provide in
-    the app settings.
-  </li>
-</ul>
+      <!-- 2 -->
+      <div class="section" id="pp-collect">
+        <h3 class="s-title"><span class="num">2</span> Information We Collect</h3>
+        <p class="para">We collect the following types of information to provide and improve our services:</p>
 
-<h3>Information Collected with Your Permission</h3>
-<ul>
-  <li>
-    <strong>Contact Information:</strong> With your explicit permission, we may
-    access your device contacts to help you add customers. Only the selected
-    contact’s name and phone number are used. We do not store or upload your full
-    contact list.
-  </li>
-  <li>
-    <strong>Profile Picture:</strong> With your permission, you may select an image
-    from your device gallery to use as a profile picture. This image is stored
-    locally on your device.
-  </li>
-</ul>
+        <h4 class="sub-title">2.1 Information You Provide Directly</h4>
+        <ul class="list">
+          <li>Shop Name and profile picture (used for branding on receipts and documents)</li>
+          <li>Customer names and phone numbers entered into the ledger</li>
+          <li>Financial transaction data including amounts, dates, notes, and due dates</li>
+          <li>PIN code (stored locally and encrypted on your device only)</li>
+          <li>Google account information (used solely for Google Drive backup authentication)</li>
+        </ul>
 
-<h3>Information Collected Automatically</h3>
-<ul>
-  <li>
-    <strong>Google Account Information:</strong> When you sign in using Google,
-    we receive your name and email address from Google for identification purposes
-    within the app.
-  </li>
-  <li>
-    <strong>Usage Data (Firebase Analytics):</strong> We collect information about
-    how the app is used, such as feature interactions and session duration. This
-    data does not directly identify you and is used to improve app functionality
-    and performance.
-  </li>
-  <li>
-    <strong>Advertising Data (Google AdMob):</strong> The app displays ads using
-    Google AdMob. AdMob may collect device information, including the advertising ID,
-    to show relevant ads. Learn more at:
-    <a href="https://policies.google.com/technologies/ads" target="_blank">
-      Google Advertising Policies
-    </a>.
-  </li>
-</ul>
+        <h4 class="sub-title">2.2 Information Collected Automatically</h4>
+        <ul class="list">
+          <li>Firebase Authentication data: user ID, email address, login timestamps, and device identifiers</li>
+          <li>App usage data for account management and security purposes</li>
+          <li>Device information such as operating system version and app version</li>
+        </ul>
 
-<h2>2. How We Use Your Information</h2>
-<ul>
-  <li>To provide and maintain core app features</li>
-  <li>To manage customers and transaction records</li>
-  <li>To personalize your experience</li>
-  <li>To enable backup and restore functionality</li>
-  <li>To analyze usage and improve the app</li>
-  <li>To send reminders and notifications</li>
-  <li>To support the app through advertising</li>
-</ul>
+        <h4 class="sub-title">2.3 Information from Third-Party Sources</h4>
+        <ul class="list">
+          <li>Contact information accessed from your phone's contact list — only when you explicitly choose to import a contact</li>
+          <li>Google Drive metadata — only the App's own backup files within the restricted App Data folder</li>
+        </ul>
+      </div>
 
-<h2>3. Data Storage and Security</h2>
+      <!-- 3 -->
+      <div class="section" id="pp-use">
+        <h3 class="s-title"><span class="num">3</span> How We Use Your Information</h3>
 
-<ul>
-  <li>
-    <strong>Local Storage:</strong> All financial records, customer data, and images
-    are stored locally on your device using an SQLite database.
-  </li>
-  <li>
-    <strong>Cloud Backup:</strong> If you enable Google Drive backup, an encrypted
-    copy of your data is stored in a private folder within your own Google Drive
-    account. We do not have access to this data. Encryption keys remain on your
-    device.
-  </li>
-</ul>
+        <h4 class="sub-title">3.1 Core App Functionality</h4>
+        <ul class="list">
+          <li>To display, calculate, and manage your digital ledger (Hishab Khata) accurately</li>
+          <li>To generate professional PDF receipts and cash memos with your shop branding</li>
+          <li>To enable sharing of receipts and balance reminders via WhatsApp, IMO, or SMS</li>
+          <li>To set and send due date payment reminders and notifications</li>
+        </ul>
 
-<p>
-We take reasonable measures to protect your data. However, no method of electronic
-storage or transmission is completely secure, and absolute security cannot be
-guaranteed.
-</p>
+        <h4 class="sub-title">3.2 Data Backup &amp; Sync</h4>
+        <ul class="list">
+          <li>To automatically back up your ledger data to your own Google Drive (App Data folder only)</li>
+          <li>To restore your data if you change or reset your device</li>
+        </ul>
 
-<h2>4. Third-Party Services</h2>
+        <h4 class="sub-title">3.3 Security &amp; Account Management</h4>
+        <ul class="list">
+          <li>To authenticate your identity via Firebase and maintain account security</li>
+          <li>To enforce PIN protection for your ledger</li>
+          <li>To allow the app administrator to suspend or ban accounts that violate our Terms of Service</li>
+        </ul>
 
-<p>The app uses the following third-party services:</p>
-<ul>
-  <li>
-    <strong>Google Sign-In & Google Drive API:</strong>
-    Subject to the
-    <a href="https://policies.google.com/privacy" target="_blank">
-      Google Privacy Policy
-    </a>.
-  </li>
-  <li>
-    <strong>Google AdMob:</strong>
-    <a href="https://policies.google.com/technologies/ads" target="_blank">
-      Advertising Policies
-    </a>
-  </li>
-  <li>
-    <strong>Firebase Analytics & Remote Config:</strong>
-    <a href="https://firebase.google.com/support/privacy" target="_blank">
-      Firebase Privacy Information
-    </a>
-  </li>
-</ul>
+        <h4 class="sub-title">3.4 Communication</h4>
+        <ul class="list">
+          <li>To allow one-tap calling and SMS to your customers directly from the App</li>
+          <li>To deliver in-app notices including suspension notices with support contact details</li>
+        </ul>
+      </div>
 
-<h2>5. Data Deletion</h2>
-<ul>
-  <li>
-    <strong>Local Data:</strong> Uninstalling the app deletes all locally stored data.
-  </li>
-  <li>
-    <strong>Cloud Backup:</strong> Backup data can be deleted manually from your
-    Google Drive account.
-  </li>
-</ul>
+      <!-- 4 -->
+      <div class="section" id="pp-storage">
+        <h3 class="s-title"><span class="num">4</span> Data Storage &amp; Security</h3>
 
-<h2>6. Children’s Privacy</h2>
-<p>
-Hishab Potro is not intended for children under the age of 13. We do not knowingly
-collect personal information from children under 13.
-</p>
+        <h4 class="sub-title">4.1 Local Storage</h4>
+        <p class="para">Your ledger data is primarily stored locally on your device using encrypted local storage. This ensures your data remains accessible even without an internet connection.</p>
 
-<h2>7. Changes to This Privacy Policy</h2>
-<p>
-We may update this Privacy Policy from time to time. Changes will be reflected on
-this page by updating the effective date.
-</p>
+        <h4 class="sub-title">4.2 Google Drive Backup</h4>
+        <p class="para">When you enable Google Drive Sync, your data is backed up to the App Data folder on your personal Google Drive account. This folder is private — only the Hishab Potro app can access it. We do not have access to your Google Drive files outside of this restricted folder.</p>
 
-<h2>8. Contact Us</h2>
-<p>
-If you have questions about this Privacy Policy, contact us at:
-<br>
-<strong>Email:</strong> pshdar@gmail.com
-</p>
+        <h4 class="sub-title">4.3 Firebase Cloud Services</h4>
+        <p class="para">We use Google Firebase for user authentication and account management. Firebase stores your user ID, email address, and login history on secure Google servers. Firebase is compliant with international data protection standards including GDPR.</p>
 
-</body>
-</html>
+        <h4 class="sub-title">4.4 Security Measures</h4>
+        <ul class="list">
+          <li>PIN-based lock screen to prevent unauthorized physical access to your ledger</li>
+          <li>Encrypted local data serialization for automatic backups</li>
+          <li>Firebase Authentication for secure cloud identity verification</li>
+          <li>We do not store your PIN on our servers — it is kept locally on your device only</li>
+        </ul>
+      </div>
+
+      <!-- 5 -->
+      <div class="section" id="pp-sharing">
+        <h3 class="s-title"><span class="num">5</span> Data Sharing &amp; Disclosure</h3>
+        <div class="highlight-box">
+          🔒 <strong>We do not sell, rent, or trade your personal information to any third party.</strong> We only share data in the following limited circumstances:
+        </div>
+        <ul class="list">
+          <li><strong>Google Firebase:</strong> For authentication, user management, and security enforcement</li>
+          <li><strong>Google Drive:</strong> For your own personal backup — data goes to your account, not ours</li>
+          <li><strong>Legal Requirements:</strong> If required by law, court order, or governmental authority</li>
+          <li><strong>Safety &amp; Fraud Prevention:</strong> To protect the rights, property, or safety of users or the public</li>
+        </ul>
+        <p class="para">We do not display advertisements and do not share your data with any advertising networks.</p>
+      </div>
+
+      <!-- 6 -->
+      <div class="section" id="pp-permissions">
+        <h3 class="s-title"><span class="num">6</span> App Permissions</h3>
+        <p class="para">Hishab Potro requests the following device permissions. All permissions are used solely for the stated purpose:</p>
+        <div class="perm-grid">
+          <div class="perm-card">
+            <strong>READ_CONTACTS</strong>
+            <span>Import customer names and numbers from your phone's contact list</span>
+          </div>
+          <div class="perm-card">
+            <strong>CALL_PHONE</strong>
+            <span>Enable one-tap calling to customers from within the App</span>
+          </div>
+          <div class="perm-card">
+            <strong>SEND_SMS</strong>
+            <span>Send balance reminder SMS messages directly to customers</span>
+          </div>
+          <div class="perm-card">
+            <strong>CAMERA / STORAGE</strong>
+            <span>Upload your shop profile picture for receipt branding</span>
+          </div>
+          <div class="perm-card">
+            <strong>INTERNET</strong>
+            <span>Firebase authentication and Google Drive backup/sync</span>
+          </div>
+          <div class="perm-card">
+            <strong>POST_NOTIFICATIONS</strong>
+            <span>Deliver due date reminders and payment alerts</span>
+          </div>
+        </div>
+        <p class="para" style="margin-top:12px;">You may deny optional permissions. Doing so will disable the corresponding feature but will not affect the core ledger functionality.</p>
+      </div>
+
+      <!-- 7 -->
+      <div class="section" id="pp-children">
+        <h3 class="s-title"><span class="num">7</span> Children's Privacy</h3>
+        <p class="para">Hishab Potro is intended for use by adults and business owners. We do not knowingly collect personal information from children under the age of 13. If we become aware that a child under 13 has provided personal information, we will take steps to delete that information promptly. If you are a parent or guardian and believe your child has provided us with personal data, please contact us immediately.</p>
+      </div>
+
+      <!-- 8 -->
+      <div class="section" id="pp-rights">
+        <h3 class="s-title"><span class="num">8</span> Your Rights &amp; Choices</h3>
+        <p class="para">As a user of Hishab Potro, you have the following rights regarding your data:</p>
+        <ul class="list">
+          <li><strong>Access:</strong> You can view all your data at any time within the App</li>
+          <li><strong>Correction:</strong> You can edit or update any customer or transaction record at any time</li>
+          <li><strong>Deletion:</strong> You can delete individual transactions, customers, or your entire account data from within the App. Soft-deleted data can be restored using the Undo feature within a limited time window</li>
+          <li><strong>Data Portability:</strong> Your data is stored in standard formats on your own device and Google Drive</li>
+          <li><strong>Revoke Backup Access:</strong> You can disconnect Google Drive access at any time via your Google account settings</li>
+          <li><strong>Account Deletion:</strong> You may contact us to request complete deletion of your Firebase account and associated data</li>
+        </ul>
+      </div>
+
+      <!-- 9 -->
+      <div class="section" id="pp-suspension">
+        <h3 class="s-title"><span class="num">9</span> Account Suspension Policy</h3>
+        <p class="para">The Hishab Potro developer reserves the right to suspend or permanently ban accounts found in violation of our Terms of Service, including:</p>
+        <ul class="list">
+          <li>Fraudulent or abusive use of the application</li>
+          <li>Attempts to reverse-engineer, hack, or manipulate the app or its data</li>
+          <li>Violation of applicable laws or regulations</li>
+        </ul>
+        <p class="para">Suspended users will receive a formal in-app notice detailing the reason and providing support contact information. Users may appeal any suspension by contacting us directly.</p>
+      </div>
+
+      <!-- 10 -->
+      <div class="section" id="pp-thirdparty">
+        <h3 class="s-title"><span class="num">10</span> Third-Party Services</h3>
+        <p class="para">Hishab Potro integrates with the following third-party services. We encourage you to review their privacy policies:</p>
+        <ul class="list">
+          <li><strong>Google Firebase</strong> (Authentication &amp; Firestore): <a href="https://firebase.google.com/support/privacy" target="_blank" style="color:var(--blue);">firebase.google.com/support/privacy</a></li>
+          <li><strong>Google Drive API:</strong> <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--blue);">policies.google.com/privacy</a></li>
+          <li><strong>WhatsApp / IMO / SMS:</strong> Sharing is initiated by you directly. We do not transmit data to these platforms on your behalf</li>
+        </ul>
+        <p class="para">We are not responsible for the privacy practices of these third-party services beyond our stated integrations.</p>
+      </div>
+
+      <!-- 11 -->
+      <div class="section" id="pp-retention">
+        <h3 class="s-title"><span class="num">11</span> Data Retention</h3>
+        <p class="para">Your local ledger data is retained on your device until you delete it or uninstall the App. Google Drive backup data is retained until you manually delete it from your Google Drive. Firebase authentication records are retained until you request account deletion. <strong>We do not retain any financial or customer data on our own servers.</strong></p>
+      </div>
+
+      <!-- 12 -->
+      <div class="section" id="pp-changes">
+        <h3 class="s-title"><span class="num">12</span> Changes to This Policy</h3>
+        <p class="para">We may update this Privacy Policy from time to time. When we do, we will notify you via an in-app notification and update the "Last Updated" date at the top of this document. Continued use of the App after changes are posted constitutes your acceptance of the updated policy.</p>
+        <p class="para">We encourage you to review this policy periodically to stay informed about how we protect your data.</p>
+      </div>
+
+      <!-- 13 -->
+      <div class="section" id="pp-contact">
+        <h3 class="s-title"><span class="num">13</span> Contact Us</h3>
+        <p class="para">If you have any questions, concerns, or data-related requests, please contact us:</p>
+        <div class="contact-box">
+          <p>We will respond to all privacy-related inquiries within 7 business days.</p>
+          <div class="contact-item"><span class="icon">✉️</span> psdhar@gmail.com</div>
+          <div class="contact-item"><span class="icon">💬</span> WhatsApp: [Your Business Number]</div>
+          <div class="contact-item"><span class="icon">📱</span> In-App: Help &amp; Support section in App Settings</div>
+        </div>
+      </div>
+
+    </div><!-- /doc-block privacy -->
+
+
+    <!-- ════════════════════════ TERMS OF SERVICE ════════════════════════ -->
+    <div class="doc-block">
+      <div class="doc-header">
+        <div class="doc-icon">📋</div>
+        <div class="doc-header-text">
+          <h2>Terms of Service</h2>
+          <p>Rules and agreements for using Hishab Potro</p>
+        </div>
+      </div>
+
+      <!-- T1 -->
+      <div class="section" id="tos-accept">
+        <h3 class="s-title"><span class="num">1</span> Acceptance of Terms</h3>
+        <p class="para">By downloading, installing, or using Hishab Potro, you agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree to these terms, you must not use the App.</p>
+      </div>
+
+      <!-- T2 -->
+      <div class="section" id="tos-license">
+        <h3 class="s-title"><span class="num">2</span> License to Use</h3>
+        <p class="para">We grant you a limited, non-exclusive, non-transferable, revocable license to use Hishab Potro on your personal Android device solely for your own business bookkeeping purposes. You may not sublicense, sell, resell, or redistribute the App or its content in any form.</p>
+      </div>
+
+      <!-- T3 -->
+      <div class="section" id="tos-resp">
+        <h3 class="s-title"><span class="num">3</span> User Responsibilities</h3>
+        <ul class="list">
+          <li>You are solely responsible for the accuracy of all data you enter into the App</li>
+          <li>You must keep your PIN secure and not share access with unauthorized persons</li>
+          <li>You must not use the App for any illegal, fraudulent, or harmful purpose</li>
+          <li>You are responsible for maintaining backups of your data; we are not liable for data loss</li>
+          <li>You must not attempt to reverse-engineer, decompile, modify, or tamper with the App</li>
+          <li>You must not use the App to harass, defraud, or harm other individuals</li>
+        </ul>
+      </div>
+
+      <!-- T4 -->
+      <div class="section" id="tos-ip">
+        <h3 class="s-title"><span class="num">4</span> Intellectual Property</h3>
+        <p class="para">All content, design, source code, features, and branding of Hishab Potro are the intellectual property of the developer. The App name, logo, and all associated assets are proprietary. You may not copy, reproduce, modify, or create derivative works based on the App without prior written permission from the developer.</p>
+      </div>
+
+      <!-- T5 -->
+      <div class="section" id="tos-warranty">
+        <h3 class="s-title"><span class="num">5</span> Disclaimer of Warranties</h3>
+        <p class="para">Hishab Potro is provided on an <strong>"as is"</strong> and <strong>"as available"</strong> basis without warranties of any kind, express or implied. We do not guarantee that the App will be error-free, uninterrupted, or completely accurate at all times.</p>
+        <div class="highlight-box">
+          ⚠️ Hishab Potro is a bookkeeping tool only and does not constitute financial, legal, tax, or accounting advice. Always consult a qualified professional for such matters.
+        </div>
+      </div>
+
+      <!-- T6 -->
+      <div class="section" id="tos-liability">
+        <h3 class="s-title"><span class="num">6</span> Limitation of Liability</h3>
+        <p class="para">To the fullest extent permitted by applicable law, the developer of Hishab Potro shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the App, including but not limited to:</p>
+        <ul class="list">
+          <li>Loss of data or corruption of business records</li>
+          <li>Business interruption or financial losses</li>
+          <li>Errors or inaccuracies in calculations</li>
+          <li>Unauthorized access to your device or account</li>
+        </ul>
+      </div>
+
+      <!-- T7 -->
+      <div class="section" id="tos-termination">
+        <h3 class="s-title"><span class="num">7</span> Account Suspension &amp; Termination</h3>
+        <p class="para">We reserve the right to suspend or terminate your access to the App at any time if you violate these Terms of Service. Suspended users will receive a formal notice within the App detailing the reason for suspension and how to contact support. You may appeal any suspension by reaching out to our support team within 30 days.</p>
+      </div>
+
+      <!-- T8 -->
+      <div class="section" id="tos-updates">
+        <h3 class="s-title"><span class="num">8</span> Updates &amp; Modifications</h3>
+        <p class="para">We may update, modify, add, or remove features of the App at any time without prior notice. We may also update these Terms of Service. Continued use of the App after any modifications constitutes your acceptance of the revised terms. We will notify users of significant changes via in-app notification.</p>
+      </div>
+
+      <!-- T9 -->
+      <div class="section" id="tos-law">
+        <h3 class="s-title"><span class="num">9</span> Governing Law</h3>
+        <p class="para">These Terms of Service are governed by and construed in accordance with the laws of the <strong>People's Republic of Bangladesh</strong>. Any disputes arising from the use of this App shall be subject to the exclusive jurisdiction of the competent courts of Bangladesh.</p>
+      </div>
+
+      <!-- T10 -->
+      <div class="section" id="tos-contact">
+        <h3 class="s-title"><span class="num">10</span> Contact</h3>
+        <p class="para">For any questions or concerns regarding these Terms of Service, please contact us:</p>
+        <div class="contact-box">
+          <p>Our team will respond within 7 business days.</p>
+          <div class="contact-item"><span class="icon">✉️</span> psdhar@gmail.com</div>
+          <div class="contact-item"><span class="icon">📱</span> In-App: Help &amp; Support section in App Settings</div>
+        </div>
+      </div>
+
+    </div><!-- /doc-block tos -->
+
+  </main>
+</div><!-- /layout -->
+
+<footer>
+  <div>© 2025 Hishab Potro. All Rights Reserved.</div>
+  <div class="tagline">"আপনার ব্যবসার হিসাব এখন পকেটে—নিরাপদ ও সহজ।"</div>
+</footer>
+
+<!-- TOC active link script -->
+<script>
+  const sections = document.querySelectorAll('.section[id]');
+  const tocLinks = document.querySelectorAll('.toc a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      i
